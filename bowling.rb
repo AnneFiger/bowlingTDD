@@ -12,20 +12,20 @@ class Bowling
 		    if rolls[1] == '/'
 				return 10
 			else 
-				digits = rolls.split('')
-				score = digits.map(&:to_i).sum
-				return score 
+				return sum_two_digits(rolls)
 			end
 		elsif rolls.length > 2
 			frames = rolls.split(' ')
 			score = 0
 			frames.each do |frame|
-				score += frame.split('').map(&:to_i).sum
+				score += sum_two_digits(frame)
 			end
 			return score
 		else
 			return rolls.to_i
 		end
 	end
-
+		def sum_two_digits(frame)
+			frame.split('').map(&:to_i).sum
+		end	
 end
