@@ -41,4 +41,9 @@ describe 'bowling score' do
 		bowling = Bowling.new
 		expect(bowling.score("34 34")).to eq(14)
 	end
+
+	it 'returns 20 if given "3/ 34"' do
+		bowling = Bowling.new
+		expect(bowling.score("3/ 34")).to eq(20)
+	end
 end
